@@ -1,0 +1,135 @@
+<!--Menu-->
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #7fc392;" data-bs-theme="dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img class="img-fluid logotipo" src="/images/HORIZONTAL.png" alt="Bootstrap" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-menu-app"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                {{#if user}}
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="/">Inicio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/somos">Nosotros</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Mascotas
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="/gestion/">Mis mascotas</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/gestion/registerPet">Registrar mascota</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider" />
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/contacto">Contacto</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/profile"> Perfil </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="btn btn-light btn-sm" style="margin-top: 2px;" href="/logout"> Salir </a>
+                </li>
+                {{else}}
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="/">Inicio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/somos">Nosotros</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/contacto">Contacto</a>
+                </li>
+
+                <li class="nav-item
+                ">
+                    <a class="btn btn-light btn-sm" style="margin-top: 2px;" href="/login"> Ingresar </a>
+                </li>
+
+                {{/if}}
+
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container altura" style="height: 70vh;" >
+    <div class="row">
+            
+        {{#each pets}}
+            
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+
+                        {{#if isTrue}}
+                            <a href="/gestion/plan/{{id}}">
+                            <h3 class="card-title text-uppercase">
+                                {{name}}
+                            </h3>
+                            </a>
+                            <p class="m-2">-Raza: {{raza}}</p>
+                            <p class="m-2">-Color: {{color}}</p>
+                            <p type="lon" class="m-2">-Historia: {{historia}}</p>
+                            
+                            <a href="/gestion/edit/{{id}}" class="btn btn-secondary">Editar</a>
+                            <a href="/gestion/service/{{id}}" class="btn btn-secondary">Gestionar</a>
+                            <a href="/gestion/delete/{{id}}" class="btn btn-danger m-2">Borrar mascota</a>
+                        {{else}}
+                            <a href="/gestion/plan/{{id}}">
+                            <h3 class="card-title text-uppercase">
+                                {{name}}
+                            </h3>
+                            </a>
+                            <p class="m-2">-Raza: {{raza}}</p>
+                            <p class="m-2">-Color: {{color}}</p>
+                            <p type="lon" class="m-2">-Historia: {{historia}}</p>
+                            <a href="/gestion/delete/{{id}}" class="btn btn-danger">Borrar mascota</a>
+                            <a href="/gestion/edit/{{id}}" class="btn btn-secondary">Editar</a>
+                        {{/if}}
+                    </div>
+                </div>
+
+                
+                
+            </div>
+            
+        {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>Aun no tienes mascotas</p>
+                    <a href="/gestion/registerPet">Registra una!</a>
+                </div>
+            </div>
+        {{/each}}
+        <h5 class="text-center m-2">Para adquirir uno de nuestros planes, haz click en el nombre de tu mascota. <br> Recuerda que puedes adquirir cada servicio 3 veces o adquirir los 3 servicios una vez.</h5>
+
+    </div>
+</div>
+
+
+
+{{>footer }}

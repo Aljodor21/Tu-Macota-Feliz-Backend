@@ -1,0 +1,86 @@
+<head>
+    <!--JQuery para usar el calendario-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    />
+</head>
+
+<body class="bg-general">
+    <div class="container w-75 bg-primary mt-5 mb-5 rounded shadow">
+      <div class="row align-items-stretch">
+        <div
+          class="col col-md-5 col-lg-5 col-xl-6 bg-gestion4 d-none d-lg-block rounded"
+        ></div>
+
+        <div class="col bg-white p-5 rounded-end">
+          <div class="text-end">
+            <a href="/gestion.html">
+              <img
+                src="/images/HORIZONTAL.png"
+                alt="Logo principal"
+                width="80px"
+              />
+            </a>
+          </div>
+
+          <h2 class="fw-bold text-center py-3">Guarderia para animales</h2>
+
+          <!--Login-->
+          <form action="#">
+            <div class="mb-4">
+              <label for="date" class="form-label"
+                >Ingresa el rango de fechas</label
+              >
+              <input
+                type="datetime"
+                class="form-control"
+                name="date"
+                id="datehor"
+                required
+              />
+            </div>
+            <div class="mb-4">
+              <label for="password" class="form-label"
+                >Recuerda que la guarderia encargada, se encontraran con
+                usted en la dirección registrada en su perfil, el dia y hora
+                establecido por usted.</label
+              >
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">Confirmar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    
+    <!--Script calendario-->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+    ></script>
+    <!--Script calendario jquery-->
+    <script>
+      $(function () {
+        $('input[name="date"]').daterangepicker({
+          timePicker: true,
+          startDate: moment().startOf("hour"),
+          endDate: moment().startOf("hour").add(32, "hour"),
+          locale: {
+            format: "M/DD hh:mm A",
+          },
+        });
+      });
+    </script>
+  </body>

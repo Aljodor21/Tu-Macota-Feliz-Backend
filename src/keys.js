@@ -1,0 +1,9 @@
+module.exports={
+    database:{
+        host:"containers-us-west-157.railway.app",
+        port:6220,
+        user:"root",
+        password:"6JdQjTWyxxb1HL2BDLnq",
+        database:"railway"
+    }
+};

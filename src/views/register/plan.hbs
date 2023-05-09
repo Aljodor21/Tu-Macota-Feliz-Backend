@@ -1,0 +1,112 @@
+<body class="bg-general">
+    {{>navbar}}   
+
+    <!--Adquisicion de planes-->
+    <section class="altura">
+      <div class="container bg-white rounded shadow">
+        <form
+          class="row btn-group"
+          role="group"
+          aria-label="Basic radio toggle button group"
+          action="/gestion/plan/{{id}}" method="POST"
+        >
+          <div class="col-12 col-sm-4 text-center mt-4 mb-4 shadow">
+            <img
+              class="img-fluid w-100"
+              src="/images/bronce.png"
+              alt="Banner01"
+            />
+            <div class="mt-5">
+              <h5>Plan bronce</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Caminata por senderos</li>
+              <li class="list-group-item">Chequeo veterinario</li>
+              <li class="list-group-item">Masajes para animales</li>
+            </ul>
+            
+            <div class="col-12 col-sm-4 mt-3 mb-4 mx-auto">
+              <input
+                type="radio"
+                class="btn-check "
+                name="plan_id"
+                id="btnradio1"
+                autocomplete="off"
+                value="1"
+                required
+              />
+              <label class="btn btn-outline-primary" for="btnradio1"
+                >Elegir</label
+              >
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-4 text-center mt-4 mb-4 shadow">
+            <img
+              class="img-fluid w-100"
+              src="/images/plata.png"
+              alt="Banner01"
+            />
+            <div class="mt-5">
+              <h5>Plan plata</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Guardería animal</li>
+              <li class="list-group-item">Adiestramiento canino</li>
+              <li class="list-group-item">Plan alimentario a base de CBD <br> para animales </li>
+            </ul>
+            <div class="col-12 col-sm-4 mt-3 mb-4 mx-auto">
+              <input
+                type="radio"
+                class="btn-check "
+                name="plan_id"
+                id="btnradio2"
+                autocomplete="off"
+                value="2"
+                required
+              />
+              <label class="btn btn-outline-primary" for="btnradio2"
+                >Elegir</label
+              >
+            </div>
+            
+          </div>
+
+          <div class="col-12 col-sm-4 text-center mt-4 mb-4 shadow">
+            <img class="img-fluid w-100" src="/images/oro.png" alt="Banner01" />
+            <div class="mt-5">
+              <h5>Plan oro</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Baño en burbujas</li>
+              <li class="list-group-item">Kit antiestrés animal</li>
+              <li class="list-group-item">Cepillado animal</li>
+            </ul>
+            <div class="col-12 col-sm-4 mt-3 mb-4 mx-auto">
+              <input
+                type="radio"
+                class="btn-check "
+                name="plan_id"
+                id="btnradio3"
+                autocomplete="off"
+                value="3"
+                required
+              />
+              <label class="btn btn-outline-primary" for="btnradio3"
+                >Elegir</label
+              >
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="col-8 col-sm-4 mx-auto btn   btn-outline-success"
+          >
+            Enviar
+          </button>
+        </form>
+      </div>
+    </section>
+
+</body>
+

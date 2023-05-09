@@ -1,0 +1,60 @@
+<head>
+    <!--JQuery para usar el calendario-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" integrity="sha512-f0tzWhCwVFS3WeYaofoLWkTP62ObhewQ1EZn65oSYDZUg1+CyywGKkWzm8BxaJj5HGKI72PnMH9jYyIFz+GH7g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-general">
+
+    <div class="container w-75  bg-primary mt-5 mb-5 rounded shadow">
+        <div class="row align-items-stretch">
+            <div class="col col-md-5 col-lg-5 col-xl-6 bg-gestion1 d-none d-lg-block rounded">
+                
+            </div>
+
+            <div class="col bg-white p-5 rounded-end ">
+                <div class="text-end">
+                    <a href="/gestion/services/:id/gest/:ide">
+                        <img src="/images/HORIZONTAL.png" alt="Logo principal" width="80px">
+                    </a>
+                </div>
+
+                <h2 class="fw-bold text-center py-3">Caminata para animales</h2>
+
+                <!--Login-->
+                <form action="/gestion/services/{{id}}/gest/{{ide}}" method="POST" >
+                    <div class="mb-4">
+                        <label for="date" class="form-label">Ingresa la fecha de la camita</label>
+                        <input type="datetime" class="form-control" name="date" id="datehor" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="form-label">Recuerda que la persona encargada de la caminata, se encontrara con usted en la dirección registrada en su perfil, el dia y hora establecido por usted.</label>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">
+                            Confirmar
+                        </button>
+                    </div>
+
+                </form>
+
+                
+
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!--Script calendario-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha512-AIOTidJAcHBH2G/oZv9viEGXRqDNmfdPVPYOYKGy3fti0xIplnlgMHUGfuNRzC6FkzIo0iIxgFnr9RikFxK+sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--Script calendario jquery-->
+    <script>
+        $(document).ready(()=>{
+            $('#datehor').datetimepicker({
+                inline:true,
+            });
+        });
+    </script>
+
+</body>

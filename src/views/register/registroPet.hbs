@@ -1,0 +1,87 @@
+<body class="bg-general">
+    <div class="container w-75  bg-primary mt-5 mb-5 rounded shadow">
+
+        <div class="row align-items-stretch">
+
+            <div class="col col-md-5 col-lg-5 col-xl-6 bg-registropet d-none d-lg-block rounded">
+
+            </div>
+
+            <div class="col bg-white p-5 rounded-end ">
+                <div class="text-end">
+                    <a href="/">
+                        <img src="/images/HORIZONTAL.png" alt="Logo principal" width="80px">
+                    </a>
+                </div>
+
+                <h2 class="fw-bold text-center py-3">Registro de mascotas</h2>
+
+                <!--Login-->
+                <form action="/gestion/registerPet" method="POST">
+                    <div class="mb-4 ">
+                        <label for="name" class="form-label ">Nombre</label>
+                        <input type="text" class="form-control " name="name" required autofocus>
+                    </div>
+                    <div class="mb-4 ">
+                        <label for="raza" class="form-label">Raza</label>
+                        
+                        <input type="text" class="form-control" name="raza" required>
+                    </div>
+                    <div class="mb-4 ">
+                        <label for="color" class="form-label">Color</label>
+
+                        <input type="text" class="form-control" name="color" required>
+                    </div>
+
+                    <div class="mb-4 ">
+                        <label for="historia" class="form-label">Historia</label>
+                        
+                        <textarea class="form-control" name="historia" id="historia" cols="30" rows="5"
+                            placeholder="Danos una breve descripción de posibles miedos o de sus origenes."
+                            required></textarea>
+                    </div>
+
+                    {{!--
+                    <div class="mb-4">
+                        <label for="color" class="form-label">Vacunas</label>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch">
+                            <label class="form-check-label">Vacuna contra el distemper</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" checked>
+                            <label class="form-check-label">Vacuna contra parvovirus</label>
+                        </div>
+
+                        <div class=" form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" checked>
+                            <label class="form-check-label">Vacuna contra la hepatitis infecciosa</label>
+                        </div>
+                        <div class=" form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" checked>
+                            <label class="form-check-label">Vacuna contra la leptospirosis</label>
+                        </div>
+                        <div class=" form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" role="switch" checked>
+                            <label class="form-check-label">Vacuna contra la rabia</label>
+                        </div>
+                    </div>
+                    --}}
+
+
+
+                    <div class=" d-grid">
+                        <button type="submit" class="btn btn-primary">
+                            Registrar
+                        </button>
+                    </div>
+
+                </form>
+
+
+
+            </div>
+        </div>
+    </div>
+
+</body>

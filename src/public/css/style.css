@@ -1,0 +1,248 @@
+:root {
+  --primer-color: #0c1c21;
+  --segundo-color: #2b7c76;
+  --tercer-color: #7fc392;
+  --cuarto-color: #bce2a5;
+  --quinto-color: #f9f492;
+
+}
+
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-weight: bold;
+}
+
+
+.sps--abv {
+  background-color: transparent;
+  color: #000;
+}
+
+.sps--blw {
+  background-color: var(--tercer-color);
+  color: #fff;
+}
+
+.logotipo{
+  width: 80px;
+  
+}
+
+nav.sps--abv .logotipo{
+  width: 120px;
+}
+
+
+.btn-light {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #f8f9fa;
+  --bs-btn-border-color: #f8f9fa;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #d3d4d5;
+  --bs-btn-hover-border-color: #c6c7c8;
+  --bs-btn-focus-shadow-rgb: 211,212,213;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #c6c7c8;
+  --bs-btn-active-border-color: #babbbc;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: #f8f9fa;
+  --bs-btn-disabled-border-color: #f8f9fa;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 40%;
+  bottom: 1.25rem;
+  left: 15%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  text-align: left;
+}
+
+.altura {
+  padding: 100px 0;
+}
+
+.iconos {
+  width: 20px;
+  margin: 10px 5px;
+}
+
+.vid {
+  background-image: url(../images/video-bg.png);
+  padding: 200px 0;
+  position: relative;
+  text-align: center;
+  background-position: center center;
+  background-size: cover;
+}
+
+.vid .play {
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+
+
+footer {
+  background-color: var(--tercer-color);
+  padding: 10px 0;
+  text-align: center;
+}
+
+.fc{
+  height: 46vh;
+}
+
+
+footer .logotipo-footer {
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+footer p {
+  color: white;
+  font-size: 12px;
+}
+
+
+/*Ventana somos*/
+.cabecera-somos{
+  padding: 200px 0 100px 0;
+  background-image: url(../images/slider-interior.jpg);
+  background-position: center center;
+  background-size: cover ;
+}
+
+.banner-somos{
+  background-image: url(../images/somos-equipo.jpg);
+  background-position: center center;
+  background-size: cover;
+  padding: 200px 0;
+  text-align: center;
+}
+
+.texto-blancoT{
+  color: white;
+  font-size: 80px;
+  text-shadow: #000;
+}
+
+.texto-blanco{
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .margiin{
+    margin-bottom: 15px;
+  }
+}
+
+
+/*----lOGIN-----*/
+.bg-login{
+  background-image: url(../images/img-login.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.body-login{
+  background: var(--cuarto-color);
+  background: linear-gradient(to right, var(--primer-color),var(--cuarto-color))
+}
+
+/*-----REGISTRO----*/
+/*----lOGIN-----*/
+.bg-registro{
+  background-image: url(../images/registro.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-registropet{
+  background-image: url(../images/registropet.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-plan{
+  background-image: url(../images/planfondo.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-general{
+  background-image: url(../images/bggeneral.png);
+}
+
+/*Diferentes fondos de la gestion*/
+.bg-gestion{
+  background-image: url(../images/gestion/gestion.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-gestion1{
+  background-image: url(../images/gestion/1.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-gestion2{
+  background-image: url(../images/gestion/2.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-gestion3{
+  background-image: url(../images/gestion/3.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-gestion4{
+  background-image: url(../images/gestion/4.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-gestion5{
+  background-image: url(../images/gestion/5.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-gestion6{
+  background-image: url(../images/gestion/6.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-gestion7{
+  background-image: url(../images/gestion/7.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-gestion8{
+  background-image: url(../images/gestion/8.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.bg-gestion9{
+  background-image: url(../images/gestion/9.jpg);
+  background-position: center center;
+  background-size: cover;
+}
