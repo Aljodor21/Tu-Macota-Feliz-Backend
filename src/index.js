@@ -6,6 +6,7 @@ const session=require('express-session');
 const MySQLStore=require('express-mysql-session')(session);
 const {database}=require('./keys');
 const passport=require('passport');
+const flash=require('connect-flash');
 
 //Inicializaciones
 const app=express();
@@ -30,6 +31,7 @@ app.use(session({
     saveUninitialized:false,
     store: new MySQLStore(database)
 }));
+app.use(flash());
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
@@ -38,6 +40,8 @@ app.use(passport.session())
 
 //Variables globales
 app.use((req,res,next)=>{
+    app.locals.success=req.flash('success');
+    app.locals.successf=req.flash('successf');
     app.locals.user = req.user;
     next()
 });

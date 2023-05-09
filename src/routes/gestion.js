@@ -2,8 +2,7 @@ const express = require('express');
 const pool = require('../database');
 const router = express.Router();
 const { isLoggedIn } = require('../lib/auth')
-const email=require('../lib/emails')
-
+const email = require('../lib/emails')
 
 //Transporte del correo
 
@@ -21,7 +20,7 @@ router.post('/registerPet', isLoggedIn, async (req, res) => {
         user_id: req.user.id
     }
     await pool.query('INSERT INTO pets SET ?', [newPet]);
-
+    req.flash('success','Mascota registrada')
     res.redirect('/gestion/');
 
 
@@ -43,7 +42,7 @@ router.get('/delete/:id', isLoggedIn, async (req, res) => {
     const { id } = req.params;
     const pets = await pool.query('DELETE FROM pets WHERE id =?', id);
 
-
+    req.flash('success','Mascota borrada exitosamente')
     res.redirect('/gestion/');
 })
 
@@ -67,6 +66,7 @@ router.post('/edit/:id', isLoggedIn, async (req, res) => {
     await pool.query('UPDATE pets SET ? WHERE id =?', [pet, id]);
     console.log('Actualizo')
 
+    req.flash('success','Mascota editada');
     res.redirect('/gestion/');
 })
 
@@ -93,6 +93,7 @@ router.post('/plan/:id', isLoggedIn, async (req, res) => {
 
     await pool.query('UPDATE pets SET plan_id = ? WHERE id =?', [plan_id, id])
 
+    req.flash('success','Plan adquirido satisfactoriamente');
     res.redirect('/gestion/');
 
 });
@@ -115,24 +116,44 @@ router.get('/service/:id', isLoggedIn, async (req, res) => {
 router.get('/services/:id/gest/:ide',isLoggedIn, async (req, res) => 
 {
 
-    const  {id}  = req.params;
+    const  {id,ide}  = req.params;
 
-    const resp=await pool.query('SELECT received FROM users WHERE id=?',req.user.id)
+    const resp=await pool.query('SELECT received FROM pets WHERE id=?',ide)
+    
 
     if(resp[0].received==='null' || resp[0].received<3){
         res.render(`services/${id}`,req.params)
     }else{
-        res.send('/')
+        res.redirect('/gestion/')
     }
     
             
         
 });
 
-router.post('/services/:id/gest/:ide',async (req, res) => {
+router.post('/services/:id/gest/:ide',isLoggedIn,async (req, res) => {
     const  {id,ide}  = req.params;
+    const {date}=req.body;
 
-    console.log(req.params)
+    const pet=await pool.query('SELECT * FROM pets WHERE id=?',ide);
+    let count=pet[0].received+1;
+    
+    console.log(count)
+    
+    await pool.query('UPDATE pets SET received = ? WHERE id =?', [count, ide])
+    
+    
+    email.mailOptions={
+        to:req.user.email,
+        subject:"Tu mascota feliz",
+        text:`Este es un correo para confirmar una adquisición\nMascota: ${pet[0].name}\nRecuerde: ${date}`
+    }
+
+
+    await email.transporter.sendMail(email.mailOptions);
+    
+    req.flash('success','Servicio gestionado');
+    res.redirect(`/gestion/service/${ide}`)
 
 
     

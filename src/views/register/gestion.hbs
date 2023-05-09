@@ -1,5 +1,14 @@
 <body class="bg-general">
 
+    {{#if success}}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{success}}</strong>
+
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {{/if}}
     <!--Gestion del servicio-->
     
     <div class="container rounded shadow w-75  bg-primary mt-5 mb-5" >

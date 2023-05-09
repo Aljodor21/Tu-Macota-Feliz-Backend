@@ -12,7 +12,7 @@
 
             <div class="col bg-white p-5 rounded-end ">
                 <div class="text-end">
-                    <a href="/gestion.html">
+                    <a href="/gestion/service/{{ide}}">
                         <img src="/images/HORIZONTAL.png" alt="Logo principal" width="80px">
                     </a>
                 </div>
@@ -20,7 +20,7 @@
                 <h2 class="fw-bold text-center py-3">Chequeo veterinario</h2>
 
                 <!--Login-->
-                <form action="#" >
+                <form action="/gestion/services/{{id}}/gest/{{ide}}" method="POST" >
                     <div class="mb-4">
                         <label for="date" class="form-label">Ingresa la fecha del chequeo</label>
                         <input type="datetime" class="form-control" name="date" id="datehor" required>

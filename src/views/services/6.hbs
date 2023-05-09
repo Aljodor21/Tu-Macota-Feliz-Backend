@@ -6,9 +6,9 @@
           class="col col-md-5 col-lg-5 col-xl-6 bg-gestion6 d-none d-lg-block rounded"
         ></div>
 
-        <div class="col bg-white p-5 rounded-end">
+        <div class="col bg-white p-5 rounded-end ">
           <div class="text-end">
-            <a href="/gestion.html">
+            <a href="/gestion/service/{{ide}}">
               <img
                 src="/images/HORIZONTAL.png"
                 alt="Logo principal"
@@ -21,8 +21,8 @@
             Plan alimentario a base de CBD para animales
           </h2>
 
-          <!--Login-->
-          <form action="#" class="row btn-group"
+          <!--Kit antiestres animal-->
+          <form action="/gestion/services/{{id}}/gest/{{ide}}" method="POST" class="row btn-group justify-content-center"
           role="group"
           aria-label="Basic radio toggle button group">
             <div class="mb-4 text-center ">
@@ -33,13 +33,14 @@
                 alt=""
               />
             </div>
-            <div class="col-6 col-sm-6 ">
+            <div class="col-12 col-sm-12 text-center">
               <input
                 type="radio"
                 class="btn-check "
-                name="btnradio"
+                name="date"
                 id="btnradio1"
                 autocomplete="off"
+                value="Adquiriste bareta pura"
                 required
               />
               <label class="btn btn-outline-primary" for="btnradio1"
@@ -47,20 +48,7 @@
               
 
             </div>
-            <div class="col-6 col-sm-6">
-              <input
-                type="radio"
-                class="btn-check "
-                name="btnradio"
-                id="btnradio2"
-                autocomplete="off"
-                
-              />
-              <label class="btn btn-outline-danger" for="btnradio2"
-                >Cancelar</label>
-              
-
-            </div>
+            
 
             <div class="mb-4 mt-4">
               <label for="password" class="form-label"
@@ -70,7 +58,7 @@
               >
             </div>
             <div class="d-grid">
-              <button type="submit" class="btn btn-primary">Confirmar</button>
+              <button type="submit" class="btn btn-success">Confirmar</button>
             </div>
           </form>
         </div>

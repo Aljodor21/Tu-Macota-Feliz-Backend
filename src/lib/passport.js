@@ -17,14 +17,14 @@ passport.use('local.login',new LocalStrategy({
         const res=await helpers.matchPassword(password,user.password);
 
         if(res){
-            console.log(1);
+            req.flash('success','Bienvenid@');
             return done(null,user);
         }else{
-            console.log(2);
+            req.flash('successf','Contraseña incorrecta');
             return done(null,false)
         }
     }else{
-        console.log(3);
+        req.flash('successf','Usuario no existe');
         return done(null,false)
     }
 

@@ -16,7 +16,7 @@
 
         <div class="col bg-white p-5 rounded-end">
           <div class="text-end">
-            <a href="/gestion.html">
+            <a href="/gestion/service/{{ide}}">
               <img
                 src="/images/HORIZONTAL.png"
                 alt="Logo principal"
@@ -28,7 +28,7 @@
           <h2 class="fw-bold text-center py-3">Guarderia para animales</h2>
 
           <!--Login-->
-          <form action="#">
+          <form action="/gestion/services/{{id}}/gest/{{ide}}" method="POST">
             <div class="mb-4">
               <label for="date" class="form-label"
                 >Ingresa el rango de fechas</label
