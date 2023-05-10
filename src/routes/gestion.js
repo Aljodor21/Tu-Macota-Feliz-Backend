@@ -125,7 +125,7 @@ router.get('/services/:id/gest/:ide',isLoggedIn, async (req, res) =>
         res.render(`services/${id}`,req.params)
     }else{
         req.flash('successf','Limite del plan alcanzado')
-        res.redirect(`/gestion/service/${ide}`)
+        res.redirect(`/gestion/`)
     }
     
             
