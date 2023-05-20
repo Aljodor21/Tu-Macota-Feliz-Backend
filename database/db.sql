@@ -16,23 +16,10 @@ CREATE TABLE pets(
     name VARCHAR(45) NOT NULL,
     raza VARCHAR(45) NOT NULL,
     color VARCHAR(60) NOT NULL,
-    historia VARCHAR(60) NOT NULL,
+    historia LONGTEXT NOT NULL,
     user_id INT,
     plan_id INT
 );
-
-ALTER TABLE pets MODIFY historia LONGTEXT;
-
-ALTER TABLE pets
-ADD CONSTRAINT pets_usuarios
-FOREIGN KEY (user_id)
-REFERENCES users(id);
-
-ALTER TABLE pets
-ADD CONSTRAINT pets_plan
-FOREIGN KEY (plan_id)
-REFERENCES plans(id);
-
 
 CREATE TABLE plans(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -45,6 +32,16 @@ CREATE TABLE services(
     received CHAR(1),
     pl_id INT NOT NULL
 );
+
+ALTER TABLE pets
+ADD CONSTRAINT pets_usuarios
+FOREIGN KEY (user_id)
+REFERENCES users(id);
+
+ALTER TABLE pets
+ADD CONSTRAINT pets_plan
+FOREIGN KEY (plan_id)
+REFERENCES plans(id);
 
 ALTER TABLE services
 ADD CONSTRAINT plane_services
