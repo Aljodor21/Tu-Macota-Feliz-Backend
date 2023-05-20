@@ -18,7 +18,8 @@ CREATE TABLE pets(
     color VARCHAR(60) NOT NULL,
     historia LONGTEXT NOT NULL,
     user_id INT,
-    plan_id INT
+    plan_id INT,
+    received INT
 );
 
 CREATE TABLE plans(
@@ -29,7 +30,6 @@ CREATE TABLE plans(
 CREATE TABLE services(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     service VARCHAR(255) NOT NULL,
-    received CHAR(1),
     pl_id INT NOT NULL
 );
 
